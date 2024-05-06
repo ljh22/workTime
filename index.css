@@ -232,9 +232,9 @@ body {
   background-color: rgb(195, 248, 255);
 }
 
-dialog::backdrop {
-  /* background-color: rgba(255, 0, 0, 0.116); */
-}
+/* dialog::backdrop {
+  background-color: rgba(255, 0, 0, 0.116);
+} */
 dialog {
   width: 23%;
   border: none;
