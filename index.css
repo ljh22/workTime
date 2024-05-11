@@ -130,8 +130,10 @@ body {
   margin-top: 20px;
 }
 .img_box img {
-  width: 100%;
+  width: 80%;
   margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 6px #9d9d9d;
 }
 
 .show_model {
