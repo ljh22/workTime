@@ -1,6 +1,10 @@
 # workTime
 
 ## 拉取优化后记得提交哈！！！！！
+<font color=#FF000 >红色</font>
+<font color="red">这是红色字体</font>
+
+
 
 ### 介绍
 计算工时小工具，网站中所用到的JSON数据模板，参考左侧目录的“JSON数据模板”！
