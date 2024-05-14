@@ -2,6 +2,7 @@
 
 ## 拉取优化后记得提交哈！！！！！
 <span style="color:red;">这是红色字体</span>
+<font color="red">这是红色字体</font>
 
 
 
