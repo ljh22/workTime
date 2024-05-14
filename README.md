@@ -1,8 +1,8 @@
 # workTime
 
 ## 拉取优化后记得提交哈！！！！！
-<font color=#FF000 >红色</font>
-<font color="red">这是红色字体</font>
+<span style="color:red;">这是红色字体</span>
+
 
 
 
