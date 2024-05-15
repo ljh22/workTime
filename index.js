@@ -44,6 +44,7 @@ class ShowModel {
   }
 }
 
+let isShowDialog = false;
 let workTime = [];
 let weekendArr = []; //周末数据
 let tableArr = []; //表格数据
@@ -108,6 +109,12 @@ ipt_date.addEventListener("input", function () {
   });
   if (workTime.length == 0) {
     new ShowModel("提示", `请先输入数据`, true);
+    ipt_date.value = "";
+    return;
+  }
+  if (btnStatus == -1) {
+    new ShowModel("提示", `请选择"周末除外"或"单独计算周末"`, true);
+    ipt_date.value = "";
     return;
   }
   new ShowModel("提示", "已更新数据，请查看具体工时", true);
@@ -141,6 +148,11 @@ function formatDateTime(textareaTime) {
  */
 function changeStatus(status) {
   console.log("status: ", status);
+  if (isShowDialog == false) {
+    new ShowModel("使用提示", `开始使用可以点击左侧tips来查看如何使用工具`, true);
+    isShowDialog = true;
+    return;
+  }
   if (workTime.length === 0) {
     new ShowModel("提示", `请先输入数据`, true);
     return;
@@ -234,6 +246,11 @@ function calculateWorkTime(startTime, endTime) {
 // 解析数据
 function calculateAlltimes() {
   console.log("btnStatus: ", btnStatus);
+  if (isShowDialog == false) {
+    new ShowModel("使用提示", `开始使用可以点击左侧tips来查看如何使用工具`, true);
+    isShowDialog = true;
+    return;
+  }
   if (workTime.length == 0) {
     new ShowModel("提示", `请先输入数据`, true);
     return;
@@ -284,13 +301,3 @@ function closeSearch() {
   imgBox.style.display = "none";
   closeBox.style.display = "none";
 }
-// // 调试dialog对话框
-// let dialog = document.querySelector("dialog");
-// let dialogCancel = document.querySelector(".dialog_box .dialog_btn_box .dialog_cancel");
-// function openDialog() {
-//   dialog.showModal();
-//   dialogCancel.addEventListener("click", closeDialog);
-// }
-// function closeDialog() {
-//   dialog.close();
-// }
