@@ -328,3 +328,94 @@ function closeSearch() {
   imgBox.style.display = "none";
   closeBox.style.display = "none";
 }
+let copyVisitJson = document.getElementsByClassName("copyJson")[0];
+copyVisitJson.addEventListener("click", copyVisitJsons);
+function copyVisitJsons() {
+  // 复制一段JSON数据到剪贴板
+  let visitJson = [
+    {
+      dt: "2024-05-06",
+      checktime: "2024-05-06 08:39:52",
+      type: "1",
+    },
+    {
+      dt: "2024-05-06",
+      checktime: "2024-05-06 17:40:28",
+      type: "2",
+    },
+    {
+      dt: "2024-05-07",
+      checktime: "2024-05-07 08:37:59",
+      type: "1",
+    },
+    {
+      dt: "2024-05-07",
+      checktime: "2024-05-07 19:38:11",
+      type: "2",
+    },
+    {
+      dt: "2024-05-08",
+      checktime: "2024-05-08 08:37:07",
+      type: "1",
+    },
+    {
+      dt: "2024-05-08",
+      checktime: "2024-05-08 19:53:59",
+      type: "2",
+    },
+    {
+      dt: "2024-05-09",
+      checktime: "2024-05-09 08:39:34",
+      type: "1",
+    },
+    {
+      dt: "2024-05-09",
+      checktime: "2024-05-09 19:34:17",
+      type: "2",
+    },
+    {
+      dt: "2024-05-10",
+      checktime: "2024-05-10 08:38:17",
+      type: "1",
+    },
+    {
+      dt: "2024-05-10",
+      checktime: "2024-05-10 17:45:36",
+      type: "2",
+    },
+    {
+      dt: "2024-05-11",
+      checktime: "2024-05-11 08:37:25",
+      type: "1",
+    },
+    {
+      dt: "2024-05-11",
+      checktime: "2024-05-11 17:43:55",
+      type: "2",
+    },
+    {
+      dt: "2024-05-13",
+      checktime: "2024-05-13 08:37:33",
+      type: "1",
+    },
+    {
+      dt: "2024-05-13",
+      checktime: "2024-05-13 17:39:01",
+      type: "2",
+    },
+    {
+      dt: "2024-05-14",
+      checktime: "2024-05-14 08:37:43",
+      type: "1",
+    },
+  ];
+  let jsonStr = JSON.stringify(visitJson);
+  let input = document.createElement("input");
+  input.value = jsonStr;
+  document.body.appendChild(input);
+  input.select(); // 选择对象
+  document.execCommand("copy"); // 执行复制命令
+  document.body.removeChild(input); // 删除创建的元素
+  new ShowModel("提示", "复制成功，请粘贴到对应位置", true);
+  // 复制JSON数据结束
+}
